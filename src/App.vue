@@ -5,7 +5,7 @@ import AppMain from './components/AppMain.vue';
 // import { store } from './store';
 
 export default {
-  name: 'MyApp',
+  name: 'App Rick and Morty',
   components: {
     AppHeader,
     AppMain,

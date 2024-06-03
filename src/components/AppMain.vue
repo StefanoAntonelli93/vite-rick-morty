@@ -1,7 +1,12 @@
 <script>
-
+// importo componente CharacterList
+import CharacterList from './CharacterList.vue';
 export default {
     name: 'AppMain',
+    components: {
+        // richiamo componente
+        CharacterList,
+    }
 }
 
 </script>
@@ -10,27 +15,7 @@ export default {
 
 <template>
     <div class="container">
-        <ul>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-            <li>personaggio</li>
-        </ul>
-
+        <!-- richiamo componente -->
+        <CharacterList />
     </div>
 </template>
