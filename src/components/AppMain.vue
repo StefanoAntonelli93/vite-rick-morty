@@ -3,14 +3,29 @@
 import CharacterList from './CharacterList.vue';
 // importo componente FoundCharacters
 import FoundCharacters from './FoundCharacters.vue'
+// importo store
+import { store } from '../store';
 export default {
     name: 'AppMain',
     components: {
         // richiamo componente
         CharacterList,
         FoundCharacters,
-    }
-}
+    },
+    data() {
+        return {
+            store,
+            loading: true,
+        };
+    },
+    mounted() {
+        // Simulo un caricamento di dati
+        setTimeout(() => {
+            // montiamo i dati dopo 1 secondo
+            this.loading = false;
+        }, 1000);
+    },
+};
 
 </script>
 
@@ -20,7 +35,10 @@ export default {
     <section>
 
         <div class="container">
-            <div class="characters">
+            <!-- se loading è true-->
+            <div v-if="loading">Caricamento dati in corso...</div>
+            <!-- altrimenti mostra i dati -->
+            <div class="characters" v-else>
                 <!-- richiamo componente -->
                 <CharacterList />
                 <FoundCharacters />
