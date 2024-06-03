@@ -1,5 +1,7 @@
 <script>
 import CharacterList from './components/CharacterList.vue';
+// // import store from store.js
+// import { store } from './store';
 
 export default {
   name: 'MyApp',
