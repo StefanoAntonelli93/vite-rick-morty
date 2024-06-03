@@ -17,7 +17,7 @@ export default {
     <section>
 
         <div class="container">
-            <div class="character">
+            <div class="characters">
                 <!-- richiamo componente -->
                 <CharacterList />
             </div>
@@ -28,20 +28,29 @@ export default {
 
 <style scoped lang="scss">
 section {
-    background-color: aquamarine;
 
-    ul {
+
+
+    .characters {
         display: flex;
         flex-wrap: wrap;
-        gap: 20px;
         text-align: center;
-        justify-content: space-between;
+        gap: 10px;
+
+        :deep(.character) {
+            width: calc(100% / 4 - 10px);
+            margin-bottom: 40px;
+
+
+            img {
+                width: 100%;
+                border-radius: 180px;
+            }
+        }
+
+
     }
 
-    :deep(img) {
-        width: 80%;
-        border-radius: 180px;
-    }
 
 
 }
