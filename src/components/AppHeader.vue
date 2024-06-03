@@ -11,7 +11,7 @@ export default {
 
             <div class="container">
 
-                <h1>Rick and Morty App</h1>
+                <h1><a href="/">Rick and Morty App</a></h1>
                 <input type="text" placeholder="Search Character">
                 <button><a href=""></a>Search</button>
                 <button><a href=""></a>Reset</button>
@@ -23,6 +23,9 @@ export default {
 </template>
 
 
+
+
+<!-- css -->
 <style scoped lang="scss">
 @use '../assets/js/scss/partials/_variables.scss' as *;
 
@@ -30,7 +33,7 @@ header {
     position: relative;
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    background-image: url('/public/images/space1.png');
+    background-image: url('/images/space1.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
@@ -59,6 +62,10 @@ header {
         width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    a {
+        color: $header-text-color;
     }
 
 }

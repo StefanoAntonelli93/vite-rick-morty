@@ -1,11 +1,14 @@
 <script>
 // importo componente CharacterList
 import CharacterList from './CharacterList.vue';
+// importo componente FoundCharacters
+import FoundCharacters from './FoundCharacters.vue'
 export default {
     name: 'AppMain',
     components: {
         // richiamo componente
         CharacterList,
+        FoundCharacters,
     }
 }
 
@@ -20,17 +23,18 @@ export default {
             <div class="characters">
                 <!-- richiamo componente -->
                 <CharacterList />
+                <FoundCharacters />
             </div>
 
         </div>
     </section>
 </template>
 
+
+
+<!-- css -->
 <style scoped lang="scss">
 section {
-
-
-
     .characters {
         display: flex;
         flex-wrap: wrap;
