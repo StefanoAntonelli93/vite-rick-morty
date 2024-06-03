@@ -24,6 +24,11 @@ export default {
 
 header {
     background-color: $header-color;
+    text-align: center;
+
+    h1 {
+        padding-bottom: 10px;
+    }
 
 }
 </style>

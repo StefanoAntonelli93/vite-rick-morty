@@ -14,8 +14,35 @@ export default {
 
 
 <template>
-    <div class="container">
-        <!-- richiamo componente -->
-        <CharacterList />
-    </div>
+    <section>
+
+        <div class="container">
+            <div class="character">
+                <!-- richiamo componente -->
+                <CharacterList />
+            </div>
+
+        </div>
+    </section>
 </template>
+
+<style scoped lang="scss">
+section {
+    background-color: aquamarine;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    :deep(img) {
+        width: 80%;
+        border-radius: 180px;
+    }
+
+
+}
+</style>

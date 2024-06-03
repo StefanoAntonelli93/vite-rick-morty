@@ -2,7 +2,9 @@
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 // // import store from store.js
-// import { store } from './store';
+import { store } from './store';
+//  import axios from axios 
+import axios from 'axios';
 
 export default {
   name: 'App Rick and Morty',
@@ -10,9 +12,18 @@ export default {
     AppHeader,
     AppMain,
   },
+  data() {
+    return {
+      store,
+    }
+  },
   created() {
+    // API call
     console.log('chiamata Api rick morty');
-  }
+    axios.get(this.store.apiUrl).then((response) => {
+      this.store.results = response.data;
+    });
+  },
 };
 </script>
 
