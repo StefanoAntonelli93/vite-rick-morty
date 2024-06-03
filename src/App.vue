@@ -1,19 +1,21 @@
 <script>
-import CharacterList from './components/CharacterList.vue';
+import AppHeader from './components/AppHeader.vue';
+import AppMain from './components/AppMain.vue';
 // // import store from store.js
 // import { store } from './store';
 
 export default {
   name: 'MyApp',
   components: {
-    CharacterList,
+    AppHeader,
+    AppMain,
   },
 };
 </script>
 
 <template>
-  <h1>Rick and Morty App</h1>
-  <CharacterList />
+  <AppHeader />
+  <AppMain />
 </template>
 
 <style scoped></style>

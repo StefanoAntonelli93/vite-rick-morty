@@ -1,7 +1,7 @@
 // importo tutte le partials nel main.scss
-@use "./partials/reset" as *;
-@use "./partials/variables" as *;
-@use "./partials/mixin" as *;
-@use "./partials/commons" as *;
-@use "./partials/utilites" as *;
-@use "./partials/typography" as *;
+@use "./partials/_reset" as *;
+@use "./partials/_variables" as *;
+@use "./partials/_mixin" as *;
+@use "./partials/_commons" as *;
+@use "./partials/_utilites" as *;
+@use "./partials/_typography" as *;
