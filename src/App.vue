@@ -10,6 +10,9 @@ export default {
     AppHeader,
     AppMain,
   },
+  created() {
+    console.log('chiamata Api rick morty');
+  }
 };
 </script>
 
