@@ -1,11 +1,6 @@
 <script>
-// importo SearchCharacter
-import SearchCharacter from './SearchCharacter.vue';
 export default {
     name: 'AppHeader',
-    components: {
-        SearchCharacter,
-    },
 };
 </script>
 
@@ -15,7 +10,9 @@ export default {
         <div class="overlay">
 
             <div class="container">
-                <SearchCharacter />
+                <!-- title -->
+                <h1><a href="/">Rick and Morty App</a></h1>
+
 
 
             </div>
@@ -50,10 +47,29 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        .container {
+            color: $header-text-color;
+            font-size: 30px;
+
+            h1 {
+                padding-bottom: 10px;
+                color: $header-text-color;
+                font-size: 50px;
+            }
+
+            img {
+                width: 100%;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            a {
+                color: $header-text-color;
+            }
+
+        }
+
     }
-
-
-
-
 }
 </style>

@@ -9,6 +9,7 @@ export default {
             store,
         };
     },
+    // creo metodo per chiamata api con axios
     methods: {
         getCharacterStatus() {
             axios.get(this.store.apiInfo.url + this.store.apiInfo.endpoints.characters).then((response) => {
@@ -16,6 +17,7 @@ export default {
             });
         },
     },
+    // aggiungo metodo in fase created
     created() {
         this.getCharacterStatus();
     },
@@ -24,9 +26,8 @@ export default {
 
 <!-- html -->
 <template>
-    <div class="container">ricerca
-        <!-- title -->
-        <h1><a href="/">Rick and Morty App</a></h1>
+    <div class="container">
+
         <!-- placeholder -->
         <input type="text" placeholder="Search Character">
         <!-- select stauts -->
@@ -40,29 +41,8 @@ export default {
 </template>
 
 
-
-<!-- scss -->
 <style scoped lang="scss">
-@use '../assets/js/scss/partials/_variables.scss' as *;
-
 .container {
-    color: $header-text-color;
-    font-size: 30px;
-
-    h1 {
-        padding-bottom: 10px;
-        color: $header-text-color;
-        font-size: 50px;
-    }
-
-    img {
-        width: 100%;
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    a {
-        color: $header-text-color;
-    }
+    text-align: center;
 }
 </style>
