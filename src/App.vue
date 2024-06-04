@@ -20,7 +20,7 @@ export default {
   created() {
     // API call
     console.log('chiamata Api rick morty');
-    axios.get(this.store.apiUrl).then((response) => {
+    axios.get(this.store.apiInfo.url + this.store.apiInfo.endpoints.characters).then((response) => {
       this.store.results = response.data;
       this.store.loading = false;
     });
