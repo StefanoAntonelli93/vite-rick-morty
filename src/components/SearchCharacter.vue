@@ -1,45 +1,35 @@
-<!-- js -->
 <script>
 import { store } from '../store';
-import axios from 'axios';
 export default {
     name: 'SearchCharacter',
     data() {
         return {
             store,
+            searchText: '',
         };
     },
-    // creo metodo per chiamata api con axios
     methods: {
-        getCharacterStatus() {
-            axios.get(this.store.apiInfo.url + this.store.apiInfo.endpoints.characters).then((response) => {
-                this.store.results = response.data;
-            });
+        resetSearch() {
+            this.searchText = '';
+            this.$emit('search', '');
         },
-    },
-    // aggiungo metodo in fase created
-    created() {
-        this.getCharacterStatus();
     },
 };
 </script>
 
-<!-- html -->
 <template>
     <div class="container">
-
-        <!-- placeholder -->
-        <input type="text" placeholder="Search Character">
-        <!-- select stauts -->
+        <input type="text" placeholder="Search Character" v-model="searchText" @input="$emit('search', searchText)">
         <select id="status">
             <option value="status" selected>Select status</option>
+            <option value="Alive">Alive</option>
+            <option value="Dead">Dead</option>
+            <option value="Unknown">Unknown</option>
         </select>
-        <!-- button -->
-        <button><a href=""></a>Search</button>
-        <button><a href=""></a>Reset</button>
+        <button>Search</button>
+        <button @click="resetSearch()">Reset</button>
     </div>
 </template>
-
 
 <style scoped lang="scss">
 .container {

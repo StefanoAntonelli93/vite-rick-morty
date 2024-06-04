@@ -13,6 +13,11 @@ export default {
             store,
         }
     },
+    methods: {
+        listCharacter() {
+            return store.results.results
+        }
+    }
 };
 
 </script>
@@ -24,7 +29,7 @@ export default {
 
 
     <!-- itero con ciclo v-for per ogni character mostro images, nome, status, species-->
-    <div class="character" v-for="(character, index) in store.results.results" :key="index">
+    <div class="character" v-for="(character, index) in listCharacter()" :key="index">
         <CharacterElement :image="character.image" :name="character.name" :status="character.status"
             :species="character.species" />
 

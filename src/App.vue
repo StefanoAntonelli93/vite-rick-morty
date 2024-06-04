@@ -9,6 +9,21 @@ import axios from 'axios';
 
 export default {
   name: 'AppRickandMorty',
+  methods: {
+    getCharacter(searchText = '') {
+      // creo varibile che definisce url della chiamata
+      let url = this.store.apiInfo.url + this.store.apiInfo.endpoints.characters;
+      if (searchText) {
+        url += `?name=${searchText}`;
+
+      }
+      axios.get(url).then((response) => {
+        this.store.results = response.data;
+        this.store.loading = false;
+
+      });
+    },
+  },
   components: {
     AppHeader,
     AppMain,
@@ -20,20 +35,17 @@ export default {
     }
   },
   created() {
-    // API call
-    console.log('chiamata Api rick morty');
-    axios.get(this.store.apiInfo.url + this.store.apiInfo.endpoints.characters).then((response) => {
-      this.store.results = response.data;
-      this.store.loading = false;
-    });
+    this.getCharacter();
   },
+
 };
 </script>
 
 <template>
 
   <AppHeader />
-  <SearchCharacter />
+  <!-- EMIT invoca dentro chi chiama -->
+  <SearchCharacter @search="getCharacter" />
   <AppMain />
 </template>
 
