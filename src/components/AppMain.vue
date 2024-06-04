@@ -18,13 +18,13 @@ export default {
             loading: true,
         };
     },
-    mounted() {
-        // Simulo un caricamento di dati
-        setTimeout(() => {
-            // montiamo i dati dopo 1 secondo
-            this.loading = false;
-        }, 1000);
-    },
+    // mounted() {
+    //     // Simulo un caricamento di dati
+    //     setTimeout(() => {
+    //         // montiamo i dati dopo 1 secondo
+    //         this.loading = false;
+    //     }, 1000);
+    // },
 };
 
 </script>
@@ -36,7 +36,7 @@ export default {
 
         <div class="container">
             <!-- se loading è true-->
-            <div v-if="loading">Caricamento dati in corso...</div>
+            <div v-if="store.loading">Caricamento dati in corso...</div>
             <!-- altrimenti mostra i dati -->
             <div class="characters" v-else>
                 <!-- richiamo componente -->

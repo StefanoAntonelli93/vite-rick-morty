@@ -22,6 +22,7 @@ export default {
     console.log('chiamata Api rick morty');
     axios.get(this.store.apiUrl).then((response) => {
       this.store.results = response.data;
+      this.store.loading = false;
     });
   },
 };
