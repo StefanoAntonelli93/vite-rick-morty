@@ -7,7 +7,7 @@ import { store } from './store';
 import axios from 'axios';
 
 export default {
-  name: 'App Rick and Morty',
+  name: 'AppRickandMorty',
   components: {
     AppHeader,
     AppMain,
