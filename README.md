@@ -6,7 +6,7 @@ Default scaffolding with sass in "devDependencies".
 
 ctrl+shift+v
 
-Ciao ragazzi,
+<!-- Ciao ragazzi,
 Esercizio di oggi: Vite Rick and Morty
 nome repo: vite-rick-morty
 
@@ -21,4 +21,15 @@ NB: non occupatevi della parte di ricerca.
 PS: Il font utilizzato è MontSerrat
 
 _Bonus:_
-Creare un componente loader da visualizzare fintantoché i risultati non sono pronti.Buona giornata e buon lavoro!
+Creare un componente loader da visualizzare fintantoché i risultati non sono pronti.Buona giornata e buon lavoro! -->
+
+Ciao ragazzi,
+
+continuate l'esercizio Rick & Morty nella stessa repository di ieri andando a implementare le funzionalità di ricerca.L'applicativo dovrà cercare i risultati per nome e per stato (alive, dead, unknown) al click sul bottone search.
+Il tasto reset invece riporterà i campi alla loro situazione iniziale.
+
+Trovate nella documentazione a questo indirizzo tutte le informazioni necessarie:
+https://rickandmortyapi.com/documentation/#filter-characters
+
+BONUS:
+creare un componente utile per la paginazione dei risultati.Buona giornata e buon lavoro!
