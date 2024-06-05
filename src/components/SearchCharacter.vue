@@ -25,7 +25,7 @@ export default {
 <template>
     <div class="container">
         <input type="text" placeholder="Search Character" v-model="searchText" @input=emitSearch()>
-        <select id="status" v-model="status" @change="emitSearch">
+        <select id="status" v-model="status">
             <option value="" selected>Select status</option>
             <option value="Alive">Alive</option>
             <option value="Dead">Dead</option>

@@ -8,25 +8,58 @@ import { store } from './store';
 import axios from 'axios';
 
 export default {
+
+
   name: 'AppRickandMorty',
+
+
   methods: {
     getCharacter(searchText = '', status = '') {
-      // creo varibile che definisce url della chiamata
+      // definisco varibile url per semplificare sintassi
       let url = this.store.apiInfo.url + this.store.apiInfo.endpoints.characters;
-      if (searchText) {
-        url += `?name=${searchText}`;
+      // creo oggetto params vuoto
+      let params = {};
 
+      if (searchText) {
+        params.name = searchText;
       }
       if (status) {
-        url += `?status=${status}`;
+        params.status = status;
       }
-      axios.get(url).then((response) => {
-        this.store.results = response.data;
-        this.store.loading = false;
 
-      });
+
+      // chiamata axios con params
+      axios.get(url, { params })
+        .then((response) => {
+          this.store.results = response.data;
+          this.store.loading = false;
+        })
+        // verifico che non ci siano errori
+        .catch((error) => {
+          console.error("An error occurred:", error);
+          this.store.loading = false;
+        });
     },
   },
+  // methods: {
+  //   getCharacter(searchText = '', status = '') {
+  //     // creo varibile che definisce url della chiamata
+  //     let url = this.store.apiInfo.url + this.store.apiInfo.endpoints.characters;
+  //     if (searchText) {
+  //       url += `?name=${searchText}`;
+
+  //     }
+  //     if (status) {
+  //       url += searchText ? `&status=${status}` : `?status=${status}`;
+  //     }
+  //     axios.get(url).then((response) => {
+  //       this.store.results = response.data;
+  //       this.store.loading = false;
+
+  //     });
+  //   },
+  // },
+
   components: {
     AppHeader,
     AppMain,
