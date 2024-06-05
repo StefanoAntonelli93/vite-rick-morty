@@ -10,12 +10,15 @@ import axios from 'axios';
 export default {
   name: 'AppRickandMorty',
   methods: {
-    getCharacter(searchText = '') {
+    getCharacter(searchText = '', status = '') {
       // creo varibile che definisce url della chiamata
       let url = this.store.apiInfo.url + this.store.apiInfo.endpoints.characters;
       if (searchText) {
         url += `?name=${searchText}`;
 
+      }
+      if (status) {
+        url += `?status=${status}`;
       }
       axios.get(url).then((response) => {
         this.store.results = response.data;

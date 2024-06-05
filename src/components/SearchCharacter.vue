@@ -6,12 +6,17 @@ export default {
         return {
             store,
             searchText: '',
+            status: '',
         };
     },
     methods: {
+        emitSearch() {
+            this.$emit('search', this.searchText, this.status);
+        },
         resetSearch() {
             this.searchText = '';
-            this.$emit('search', '');
+            this.status = '';
+            this.$emit('search', '', '');
         },
     },
 };
@@ -19,14 +24,14 @@ export default {
 
 <template>
     <div class="container">
-        <input type="text" placeholder="Search Character" v-model="searchText" @input="$emit('search', searchText)">
-        <select id="status">
-            <option value="status" selected>Select status</option>
+        <input type="text" placeholder="Search Character" v-model="searchText" @input=emitSearch()>
+        <select id="status" v-model="status" @change="emitSearch">
+            <option value="" selected>Select status</option>
             <option value="Alive">Alive</option>
             <option value="Dead">Dead</option>
             <option value="Unknown">Unknown</option>
         </select>
-        <button>Search</button>
+        <button @click="emitSearch()">Search</button>
         <button @click="resetSearch()">Reset</button>
     </div>
 </template>
