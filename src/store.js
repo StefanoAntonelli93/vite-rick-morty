@@ -12,7 +12,6 @@ export const store = reactive({
     url: "https://rickandmortyapi.com/api/",
     endpoints: {
       characters: "character",
-      name: "?name=",
     },
   },
 });

@@ -1,22 +1,21 @@
 <script>
-import AppHeader from './components/AppHeader.vue';
-import AppMain from './components/AppMain.vue';
-import SearchCharacter from './components/SearchCharacter.vue';
+import AppHeader from "./components/AppHeader.vue";
+import AppMain from "./components/AppMain.vue";
+import AppFooter from "./components/AppFooter.vue";
+import SearchCharacter from "./components/SearchCharacter.vue";
 // // import store from store.js
-import { store } from './store';
-//  import axios from axios 
-import axios from 'axios';
+import { store } from "./store";
+//  import axios from axios
+import axios from "axios";
 
 export default {
-
-
-  name: 'AppRickandMorty',
-
+  name: "AppRickandMorty",
 
   methods: {
-    getCharacter(searchText = '', status = '') {
+    getCharacter(searchText = "", status = "") {
       // definisco varibile url per semplificare sintassi
-      let url = this.store.apiInfo.url + this.store.apiInfo.endpoints.characters;
+      let url =
+        this.store.apiInfo.url + this.store.apiInfo.endpoints.characters;
       // creo oggetto params vuoto
       let params = {};
 
@@ -27,9 +26,9 @@ export default {
         params.status = status;
       }
 
-
       // chiamata axios con params
-      axios.get(url, { params })
+      axios
+        .get(url, { params })
         .then((response) => {
           this.store.results = response.data;
           this.store.loading = false;
@@ -41,48 +40,30 @@ export default {
         });
     },
   },
-  // methods: {
-  //   getCharacter(searchText = '', status = '') {
-  //     // creo varibile che definisce url della chiamata
-  //     let url = this.store.apiInfo.url + this.store.apiInfo.endpoints.characters;
-  //     if (searchText) {
-  //       url += `?name=${searchText}`;
-
-  //     }
-  //     if (status) {
-  //       url += searchText ? `&status=${status}` : `?status=${status}`;
-  //     }
-  //     axios.get(url).then((response) => {
-  //       this.store.results = response.data;
-  //       this.store.loading = false;
-
-  //     });
-  //   },
-  // },
 
   components: {
     AppHeader,
     AppMain,
+    AppFooter,
     SearchCharacter,
   },
   data() {
     return {
       store,
-    }
+    };
   },
   created() {
     this.getCharacter();
   },
-
 };
 </script>
 
 <template>
-
   <AppHeader />
   <!-- EMIT invoca dentro chi chiama -->
   <SearchCharacter @search="getCharacter" />
   <AppMain />
+  <AppFooter />
 </template>
 
 <style scoped></style>
